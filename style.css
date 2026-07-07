@@ -16,8 +16,6 @@ body, button {
     position: relative;
     max-width: 1440px;
     margin: 0 auto;
-    max-height: 800px;
-    height: 100vh;
     background-image: url('img/Desktop.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,7 +35,6 @@ body, button {
 .top__title {
     font-weight: 700;
     font-size: 64px;
-    line-height: 100%;
     color: #202027;
     margin-bottom: 24px;
 }
@@ -47,7 +44,6 @@ body, button {
     margin-bottom: 48px;
     font-weight: 400;
     font-size: 24px;
-    line-height: 32px;
 }
 
 .top__subtitle-accent {
@@ -65,8 +61,8 @@ body, button {
     color: #ffffff;
     font-size: 24px;
     font-weight: 600;
-    width: 247px;
-    padding: 16px 28px;
+    /* width: 247px; */
+    padding: 16px 65px;
     border: 2px solid #111111;
     border-radius: 30px;
     cursor: pointer;
@@ -152,10 +148,8 @@ body, button {
     max-width: 788px;
     font-weight: 400;
     font-size: 24px;
-    line-height: 110.00000000000001%;
     color: #ffffff;
     margin-bottom: 72px;
-    
 }
 
 .games__container {
@@ -265,4 +259,93 @@ body, button {
     font-weight: 700;
     color: #111111;
     font-size: 32px;
+}
+
+@media (max-width: 376px) {
+
+    .top {
+        display: flex;
+        align-items: center;
+        background-image: url('img/mobile.svg');
+        padding: 0;
+    }
+
+    .top__container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 182px;
+        margin-top: 147px;
+    }
+
+    .ticker {
+        height: 52px;
+    }
+
+    .top__title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 110%;
+        text-align: center;
+        max-width: 262px;
+    }
+
+    .top__subtitle {
+        font-weight: 400;
+        font-size: 16px;
+        max-width: 296px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .top__btn {
+        display: inline-block;
+        background-color: black;
+        border-radius: 60px;
+        padding: 16px 103px;
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 36px;
+    }
+
+    .top__subtitle-accent {
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .ticker {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #BCEC30;
+        border-bottom: 2px solid #111111;
+        padding: 18px 0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .ticker__star {
+        margin: 27px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .ticker__track span {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 110%;
+        letter-spacing: 4%;
+        text-transform: uppercase;
+
+    }
+
+    .games {
+        display: none;
+    }
+
 }
