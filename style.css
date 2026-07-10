@@ -12,17 +12,22 @@ body, button {
     font-family: "Montserrat", Arial, sans-serif;
 }
 
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
 .top {
     position: relative;
-    max-width: 1440px;
-    margin: 0 auto;
+    /* max-width: 1440px;
+    margin: 0 auto; */
     background-image: url('img/Desktop.svg');
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0 120px;
+    /* align-items: flex-start; */
+    /* padding: 0 120px; */
     overflow: hidden;
 }
 
@@ -125,9 +130,9 @@ body, button {
     overflow: hidden;
     background-position: center;
     background-size: cover;
-    max-width: 1440px;
+    /* max-width: 1440px; */
     justify-content: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .games__header {
@@ -155,7 +160,7 @@ body, button {
 .games__container {
     margin-top: 94px;
     width: 100%;
-    padding: 0 120px;
+    /* padding: 0 120px; */
     box-sizing: border-box;
     margin-bottom: 50px;
 }
@@ -251,8 +256,20 @@ body, button {
 }
 
 .game-card__meta {
+    /
     font-weight: 500;
     font-size: 16px;
+    background: #F7F7F7;
+    width: 108px;
+    height: 36px;
+    border-radius: 52.58px;
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #202027;
 }
 
 .game-card__title {
