@@ -229,47 +229,47 @@
 //       console.log('ввели что-то не то');
 // }
 
-let monthNumber = Number(prompt("Напиши номер месяца"));
+// let monthNumber = Number(prompt("Напиши номер месяца"));
 
-switch (monthNumber) {
-    case 1:
-        console.log("зима");
-        break;
-    case 2:
-        console.log("зима");
-        break;
-    case 3:
-        console.log("весна");
-        break;
-    case 4:
-        console.log("весна");
-        break;
-    case 5:
-        console.log("весна");
-        break;
-    case 6:
-        console.log("лето");
-        break;
-    case 7:
-        console.log("лето");
-        break;
-    case 8:
-        console.log("лето");
-        break;
-    case 9:
-        console.log("осень");
-        break;
-    case 10:
-        console.log("осень");
-        break;
-    case 11:
-        console.log("осень");
-        break;
-    case 12:
-        console.log("зима");
-        break;
+// switch (monthNumber) {
+//     case 1:
+//         console.log("зима");
+//         break;
+//     case 2:
+//         console.log("зима");
+//         break;
+//     case 3:
+//         console.log("весна");
+//         break;
+//     case 4:
+//         console.log("весна");
+//         break;
+//     case 5:
+//         console.log("весна");
+//         break;
+//     case 6:
+//         console.log("лето");
+//         break;
+//     case 7:
+//         console.log("лето");
+//         break;
+//     case 8:
+//         console.log("лето");
+//         break;
+//     case 9:
+//         console.log("осень");
+//         break;
+//     case 10:
+//         console.log("осень");
+//         break;
+//     case 11:
+//         console.log("осень");
+//         break;
+//     case 12:
+//         console.log("зима");
+//         break;
    
-    default:
-        console.log('В году 12 месяцев!');
+//     default:
+//         console.log('В году 12 месяцев!');
        
-}
+// }

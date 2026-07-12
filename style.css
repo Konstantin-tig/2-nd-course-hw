@@ -155,7 +155,6 @@ body, button {
     margin-top: 94px;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 50px;
 }
 
 .games__grid {
@@ -344,7 +343,7 @@ body, button {
     font-weight: 700;
     font-size: 64px;
     padding-top: 96px;
-    margin-bottom: 72px;
+    padding-bottom: 72px;
     color: #FFFFFF;
 }
 
