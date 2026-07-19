@@ -126,7 +126,7 @@ body, button {
     background-position: center;
     background-size: cover;
     justify-content: center;
-    
+
 }
 
 .games__header {
@@ -283,6 +283,12 @@ body, button {
     padding-bottom: 144px;
 }
 
+.mini-games__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
 .mini-card__preview--guess-number {
     background-image: url('img/card cover.svg');
 }
@@ -313,8 +319,8 @@ body, button {
     border-radius: 45px;
     overflow: hidden;
     width: 100%;
-    min-height: 500px;
-    margin-bottom: 32px;
+    min-height: 400px;
+    /* margin-bottom: 32px; */
 }
 
 .mini-card__info {
@@ -493,6 +499,84 @@ body, button {
 
     .games {
         display: none;
+    }
+
+    .mini-games__title {
+        font-weight: 700;
+        font-size: 40px;
+        color: #FFFFFF;
+        padding-top: 48px;
+        padding-bottom: 48px;
+        padding-left: 16px;
+    }
+
+    .mini-card {
+        flex-direction: column-reverse;
+        max-width: 343px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 30px;
+        min-height: auto;
+    }
+
+    .mini-card--reverse {
+        flex-direction: column-reverse;
+    }
+
+    .mini-card__preview {
+        flex: none;
+        width: 100%;
+        height: 245px;
+    }
+
+    .mini-card__info {
+        flex: none;
+        min-width: auto;
+        padding: 30px 30px 32px 30px;
+        gap: 0;
+        box-sizing: border-box;
+        min-width: auto;
+        width: 100%;
+    }
+
+    .mini-card__title {
+        font-weight: 700;
+        font-size: 32px;
+        padding-bottom: 16px;
+    }
+
+    .mini-card__text {
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 100%;
+        padding-bottom: 32px;
+    }
+
+    .mini-card__btn {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px 0;
+        box-sizing: border-box;
+    }
+
+    .mini-games {
+        padding-bottom: 48px;
+    }
+
+    .mini-games__list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .footer {
+        min-height: 100px;
+    }
+
+    .footer__text {
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
     }
 
 }
