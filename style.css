@@ -319,7 +319,7 @@ body, button {
     border-radius: 45px;
     overflow: hidden;
     width: 100%;
-    min-height: 400px;
+    min-height: 500px;
     /* margin-bottom: 32px; */
 }
 
@@ -518,6 +518,7 @@ body, button {
         border-radius: 30px;
         min-height: auto;
         min-height: 528px;
+        height: ;
     }
 
     .mini-card--reverse {
