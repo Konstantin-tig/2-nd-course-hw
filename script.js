@@ -220,136 +220,206 @@ function startReverseTextGame() {
 
 
 
-// Задание 1
-// Преобразовать строку 
-// 'js'
-//  в верхний регистр.
+// Основное задание по верстке макета
+// Реализуйте связь с сайтом для следующей игры.
 
-// let jscript = 'js';
-// alert (jscript.toUpperCase())
+// Игра «Камень, ножницы, бумага»
+// Описание: создайте игру «Камень, ножницы, бумага», где пользователь играет против компьютера.
+
+// Требования:
+
+// Сайт запрашивает у пользователя его выбор (камень, ножницы, бумага).
+// Генерирует случайный выбор компьютера.
+// Определяет победителя и выводит результат.
+
+
+
+let RockPaperScissors = document.getElementById('game_start-2');
+RockPaperScissors.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    let user = prompt("Введите: камень, ножницы или бумага");
+    if (user === null) {
+        alert("Игра отменена!");
+        return; 
+    }
+    let choices = ["камень", "ножницы", "бумага"];
+    let randomNumber = Math.floor(Math.random() * 3);
+    let computer = choices[randomNumber];
+
+    if (user === computer) {
+        alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Ничья!");
+    } 
+    
+    else if (user === "камень" && computer === "ножницы") {
+        alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Вы победили!");
+    } 
+    else if (user === "ножницы" && computer === "бумага") {
+        alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Вы победили!");
+    } 
+    else if (user === "бумага" && computer === "камень") {
+        alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Вы победили!");
+    } 
+    
+    else if (user === "камень" || user === "ножницы" || user === "бумага") {
+        alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Компьютер победил!");
+    } 
+    
+    else {
+        alert("Ошибка! Вы ввели что-то не то. Надо писать точно: камень, ножницы или бумага.");
+    }
+
+});
+
+
+
+
+// Задание 1
+// С помощью метода массива 
+// sort
+//  отсортируйте массив 
+// people
+//  по возрастанию возраста и выведите результат в консоль.
+
+
+// const people = [
+//    { name: 'Глеб', age: 29 },
+//    { name: 'Анна', age: 17 },
+//    { name: 'Олег', age: 7 },
+//    { name: 'Оксана', age: 47 }
+// ];
+
+// people.sort(function(a, b) {
+//    return a.age - b.age;
+// });
+
+// console.log(people);
 
 
 
 // Задание 2
-// Создать функцию, которая принимает массив строк и строку. Функция должна вернуть новый массив,
-// содержащий только те элементы первого массива, которые начинаются со второй строки. Регистр символов не влияет на результат.
-// let arr = ['айти', 'шериф', 'скуф', 'страсть', 'реальность',];
-// let startSearch = 'С';
-// function secondLine(array, line) {
-//     let oops = line.toLowerCase();
-//     return array.filter(item => {
-//         return item.toLowerCase().startsWith(oops)
-//     });
+// Реализуйте функцию 
+// filter
+// , которая должна работать аналогично методу массива 
+// filter
+// . Возьмите за основу функцию 
+// map
+// , которую мы реализовывали на уроке.
+
+// Чтобы из функции 
+// map
+//  сделать 
+// filter
+// , нужно, в зависимости от результата вызова 
+// ruleFunction
+// , принимать решение о том, добавлять в результирующий массив очередной элемент или нет.
+
+
+
+
+// function isPositive(number) {
+//     if (number > 0) {
+//         return true;  
+//     } else {
+//         return false; 
+//     }
 // }
 
-// let result = secondLine(arr,startSearch);
-// console.log(result);
+// function isMale(person) {
+//     if (person.gender === 'male') {
+//         return true; 
+//     } else {
+//         return false; 
+//     }
+// }
+
+// function filter(array, ruleFunction) {
+//     let result = [];
+
+//     for (let i = 0; i < array.length; i++) {
+
+//         if (ruleFunction(array[i]) === true) {
+//             result.push(array[i]);
+//         }
+//     }
+
+//     return result;
+// }
+
+// console.log(filter([3, -4, 1, 9], isPositive)); 
+
+// const people = [
+//    {name: 'Глеб', gender: 'male'},
+//    {name: 'Анна', gender: 'female'},
+//    {name: 'Олег', gender: 'male'},
+//    {name: 'Оксана', gender: 'female'}
+// ];
+
+// console.log(filter(people, isMale));
+
 
 
 // Задание 3
-// Округлить число 32.58884:
+// Напишите программу, которая на протяжении 30 секунд каждые 3 секунды будет выводить в консоль текущую дату. 
+// Последней строкой должно выводиться сообщение «30 секунд прошло».
 
-// До меньшего целого.
-// До большего целого.
-// До ближайшего целого.
 
-// let average = 32.58884;
-// console.log(Math.floor(average));
-// console.log(Math.ceil(average));
-// console.log(Math.round(average));
+
+// let timerId = setInterval(function() {
+//     let currentDate = new Date();
+//     console.log(currentDate);
+
+// }, 3000); 
+
+// setTimeout(function() {
+
+//     clearInterval(timerId);
+
+//     console.log("30 секунд прошло");
+
+// }, 30000); 
 
 
 // Задание 4
-// Найти минимальное и максимальное значения из чисел 52, 53, 49, 77, 21, 32 и вывести их в консоль.
+// Сейчас код ниже выводит в консоль «Привет, Глеб!» сразу после запуска.
 
-// let resultMin = Math.min(52, 53, 49, 77, 21, 32);
-// let resultMax = Math.max(52, 53, 49, 77, 21, 32);
-// console.log (resultMin);
-// console.log (resultMax);
+// Допишите функцию 
+// delayForSecond
+//  так, чтобы приветствие выводилось в консоль не сразу, а спустя 1 секунду. Используйте 
+// setTimeout
+// .
+
+// function delayForSecond(callback) {
+//     setTimeout(function() {
+//         callback();
+//     }, 1000); 
+// }
+
+// delayForSecond(function () {
+//    console.log('Привет, Глеб!');
+// });
+
 
 
 // Задание 5
-// Создать функцию, которая выводит в консоль случайное число от 1 до 10.
+// Посмотрите код. В нём допущена ошибка, и он выводит сообщения не в том порядке:
 
-// function randomNumb() {
-//     let randomNumb = Math.floor(Math.random()*10 + 1 );
-//     console.log(randomNumb);
+// Функция delayForSecond через 1 секунду пишет в консоль 
+// «Прошла одна секунда», а затем вызывает переданный колбэк
+// function delayForSecond(cb) {
+//     setTimeout(() => {
+//         console.log('Прошла одна секунда');
+//         if(cb) {  cb(); }
+//     }, 1000)
 // }
 
-// randomNumb();
-
-// Задание 6
-
-// Написать функцию, которая принимает целое число и возвращает массив случайных чисел от 0 до этого числа.
-//  Длина массива должна быть в два раза меньше переданного числа.
-
-// function getRandomArray(maxNumber) {
-//   const arrayLength = Math.floor(maxNumber / 2);
-//   const result = [];
-//   for (let i = 0; i < arrayLength; i++) {
-//     const randomNumber = Math.floor(Math.random() * (maxNumber + 1));
-//     result.push(randomNumber);
-//   }
-//   return result;
+// // Функция sayHi выводит в консоль приветствие для указанного имени
+// function sayHi (name) {
+//     console.log(`Привет, ${name}!`);
 // }
 
-// console.log(getRandomArray(10)); 
+// // Код выше менять нельзя
 
-// Задание 7
-// Создать функцию, которая принимает два целых числа и возвращает случайное число в этом диапазоне.
-
-// function getRandom(num1, num2) {
-//   return Math.round(Math.random() * (num2 - num1)) + num1;
-// }
-
-// console.log(getRandom(1, 3)); 
-
-
-
-// Задание 8
-// Вывести в консоль текущую дату.
-
-// console.log(new Date()); 
-
-// Задание 9
-// Создать переменную 
-// currentDate
-// , хранящую текущую дату. Вывести дату, которая наступит через 73 дня после текущей.
-
-
-// const currentDate = new Date();
-
-// console.log('Сегодня:', currentDate.toLocaleDateString('ru-RU'));
-
-// const futureDate = new Date(currentDate);
-// futureDate.setDate(futureDate.getDate() + 73);
-
-// console.log('Через 73 дня будет:', futureDate.toLocaleDateString('ru-RU'));
-
-
-
-// Задание 10
-
-
-// function formatDate(date) {
-//   const months = [
-//     'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-//     'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'
-//   ];
-  
-//   const weekdays = [
-//     'воскресенье', 'понедельник', 'вторник', 'среда', 
-//     'четверг', 'пятница', 'суббота'
-//   ];
-//   const day = date.getDate();
-//   const year = date.getFullYear();
-//   const monthName = months[date.getMonth()];
-//   const weekdayName = weekdays[date.getDay()];
-//   const hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
-//   const minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
-//   const seconds = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
-//   return `Дата: ${day} ${monthName} ${year} — это ${weekdayName}.\nВремя: ${hours}:${minutes}:${seconds}`;
-// }
-
-// const testDate = new Date();
-// console.log(formatDate(testDate));
+// // Нужно изменить код ниже:
+// delayForSecond(function() {
+//     sayHi('Глеб');
+// });
