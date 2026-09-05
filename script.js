@@ -31,12 +31,12 @@ function startQuiz() {
     alert(`Правильные ответы: ${correct} из ${quiz.length}`);
 }
 
-const quizBtn = document.querySelector('#game_start-4'); 
+const quizBtn = document.querySelector('#game_start-4');
 
 if (quizBtn) {
-    quizBtn.addEventListener('click', function(event) {
-        event.preventDefault(); 
-        startQuiz();            
+    quizBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        startQuiz();
     });
 }
 
@@ -65,9 +65,9 @@ if (quizBtn) {
 
 const gameButton = document.getElementById('game_start-1');
 
-gameButton.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    startGuessingGame();   
+gameButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    startGuessingGame();
 });
 
 function startGuessingGame() {
@@ -91,7 +91,7 @@ function startGuessingGame() {
 
         if (input === null) {
             alert(`Игра окончена. Было загадано число: ${secretNumber}`);
-            break; 
+            break;
         }
 
         userGuess = parseInt(input, 10);
@@ -102,7 +102,7 @@ function startGuessingGame() {
         }
 
         const resultMessage = checkPlayerAnswer(userGuess);
-        
+
         alert(resultMessage);
     }
 }
@@ -132,20 +132,20 @@ function startGuessingGame() {
 
 const ArithmeticGamebtn = document.getElementById('game_start-3');
 
-ArithmeticGamebtn.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    startArithmeticGame();   
+ArithmeticGamebtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    startArithmeticGame();
 });
 
 function startArithmeticGame() {
     const operations = ['+', '-', '*', '/'];
     const randomOperator = operations[Math.floor(Math.random() * operations.length)];
-    
+
     const num1 = Math.floor(Math.random() * 20) + 1;
     const num2 = Math.floor(Math.random() * 20) + 1;
-    
+
     let correctAnswer;
-    
+
     switch (randomOperator) {
         case '+':
             correctAnswer = num1 + num2;
@@ -161,17 +161,17 @@ function startArithmeticGame() {
             correctAnswer = parseFloat(correctAnswer.toFixed(2));
             break;
     }
-    
+
     const userInput = prompt(`Решите задачу:\n${num1} ${randomOperator} ${num2} = ?\n\n(Для выхода нажмите Отмена)`);
-    
+
     if (userInput === null) {
         alert("Игра окончена!");
         return;
     }
-    
+
     const cleanInput = userInput.replace(',', '.');
     const playerAnswer = parseFloat(cleanInput);
-    
+
     if (isNaN(playerAnswer)) {
         alert("Вы ввели не число! Попробуйте еще раз.");
     } else if (playerAnswer === correctAnswer) {
@@ -198,9 +198,9 @@ function startArithmeticGame() {
 
 const textGameButton = document.getElementById('game_start-5');
 
-textGameButton.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    startReverseTextGame(); 
+textGameButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    startReverseTextGame();
 });
 
 function startReverseTextGame() {
@@ -235,39 +235,44 @@ function startReverseTextGame() {
 
 
 let RockPaperScissors = document.getElementById('game_start-2');
-RockPaperScissors.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    let user = prompt("Введите: камень, ножницы или бумага");
-    if (user === null) {
+RockPaperScissors.addEventListener('click', function (event) {
+    event.preventDefault();
+    
+    let userInput = prompt("Введите: камень, ножницы или бумага");
+    
+    // Проверка на нажатие кнопки «Отмена»
+    if (userInput === null) {
         alert("Игра отменена!");
-        return; 
+        return;
     }
+    
+    // ВСЕ БУКВЫ ДЕЛАЕМ МАЛЕНЬКИМИ И УБИРАЕМ ЛИШНИЕ ПРОБЕЛЫ
+    // Теперь не важно, написали вы КАМЕНЬ, Камень или каМеНь — JavaScript увидит это как "камень"
+    let user = userInput.toLowerCase().trim();
+    
     let choices = ["камень", "ножницы", "бумага"];
     let randomNumber = Math.floor(Math.random() * 3);
     let computer = choices[randomNumber];
 
+    // Логика сравнения (все слова здесь строго маленькими буквами)
     if (user === computer) {
         alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Ничья!");
-    } 
-    
+    }
     else if (user === "камень" && computer === "ножницы") {
         alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Вы победили!");
-    } 
+    }
     else if (user === "ножницы" && computer === "бумага") {
         alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Вы победили!");
-    } 
+    }
     else if (user === "бумага" && computer === "камень") {
         alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Вы победили!");
-    } 
-    
+    }
     else if (user === "камень" || user === "ножницы" || user === "бумага") {
         alert("Вы выбрали: " + user + "\nКомпьютер выбрал: " + computer + "\n\nИтог: Компьютер победил!");
-    } 
-    
+    }
     else {
         alert("Ошибка! Вы ввели что-то не то. Надо писать точно: камень, ножницы или бумага.");
     }
-
 });
 
 
@@ -423,3 +428,8 @@ RockPaperScissors.addEventListener('click', function(event) {
 // delayForSecond(function() {
 //     sayHi('Глеб');
 // });
+
+// for (let i = 0; i < 3; i++) alert(i)
+
+
+
