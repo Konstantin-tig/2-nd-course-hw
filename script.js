@@ -237,19 +237,19 @@ function startReverseTextGame() {
 let RockPaperScissors = document.getElementById('game_start-2');
 RockPaperScissors.addEventListener('click', function (event) {
     event.preventDefault();
-    
+
     let userInput = prompt("Введите: камень, ножницы или бумага");
-    
+
     // Проверка на нажатие кнопки «Отмена»
     if (userInput === null) {
         alert("Игра отменена!");
         return;
     }
-    
+
     // ВСЕ БУКВЫ ДЕЛАЕМ МАЛЕНЬКИМИ И УБИРАЕМ ЛИШНИЕ ПРОБЕЛЫ
     // Теперь не важно, написали вы КАМЕНЬ, Камень или каМеНь — JavaScript увидит это как "камень"
     let user = userInput.toLowerCase().trim();
-    
+
     let choices = ["камень", "ножницы", "бумага"];
     let randomNumber = Math.floor(Math.random() * 3);
     let computer = choices[randomNumber];
@@ -276,160 +276,33 @@ RockPaperScissors.addEventListener('click', function (event) {
 });
 
 
+// Генератор случайных цветов
+// Описание: При каждом клике на кнопку фон страницы меняется на случайный цвет.
+
+// Требования: Создайте кнопку, которая при нажатии меняет цвет фона (или другого элемента) на случайный.
 
 
-// Задание 1
-// С помощью метода массива 
-// sort
-//  отсортируйте массив 
-// people
-//  по возрастанию возраста и выведите результат в консоль.
+const colorBtn = document.getElementById('color-btn');
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+colorBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    const allSections = document.querySelectorAll('section');
+    const randomColor = getRandomColor();
+    allSections.forEach(function (section) {
+        section.style.backgroundImage = 'none';
+        section.style.backgroundColor = randomColor;
+    });
+});
 
 
-// const people = [
-//    { name: 'Глеб', age: 29 },
-//    { name: 'Анна', age: 17 },
-//    { name: 'Олег', age: 7 },
-//    { name: 'Оксана', age: 47 }
-// ];
-
-// people.sort(function(a, b) {
-//    return a.age - b.age;
-// });
-
-// console.log(people);
-
-
-
-// Задание 2
-// Реализуйте функцию 
-// filter
-// , которая должна работать аналогично методу массива 
-// filter
-// . Возьмите за основу функцию 
-// map
-// , которую мы реализовывали на уроке.
-
-// Чтобы из функции 
-// map
-//  сделать 
-// filter
-// , нужно, в зависимости от результата вызова 
-// ruleFunction
-// , принимать решение о том, добавлять в результирующий массив очередной элемент или нет.
-
-
-
-
-// function isPositive(number) {
-//     if (number > 0) {
-//         return true;  
-//     } else {
-//         return false; 
-//     }
-// }
-
-// function isMale(person) {
-//     if (person.gender === 'male') {
-//         return true; 
-//     } else {
-//         return false; 
-//     }
-// }
-
-// function filter(array, ruleFunction) {
-//     let result = [];
-
-//     for (let i = 0; i < array.length; i++) {
-
-//         if (ruleFunction(array[i]) === true) {
-//             result.push(array[i]);
-//         }
-//     }
-
-//     return result;
-// }
-
-// console.log(filter([3, -4, 1, 9], isPositive)); 
-
-// const people = [
-//    {name: 'Глеб', gender: 'male'},
-//    {name: 'Анна', gender: 'female'},
-//    {name: 'Олег', gender: 'male'},
-//    {name: 'Оксана', gender: 'female'}
-// ];
-
-// console.log(filter(people, isMale));
-
-
-
-// Задание 3
-// Напишите программу, которая на протяжении 30 секунд каждые 3 секунды будет выводить в консоль текущую дату. 
-// Последней строкой должно выводиться сообщение «30 секунд прошло».
-
-
-
-// let timerId = setInterval(function() {
-//     let currentDate = new Date();
-//     console.log(currentDate);
-
-// }, 3000); 
-
-// setTimeout(function() {
-
-//     clearInterval(timerId);
-
-//     console.log("30 секунд прошло");
-
-// }, 30000); 
-
-
-// Задание 4
-// Сейчас код ниже выводит в консоль «Привет, Глеб!» сразу после запуска.
-
-// Допишите функцию 
-// delayForSecond
-//  так, чтобы приветствие выводилось в консоль не сразу, а спустя 1 секунду. Используйте 
-// setTimeout
-// .
-
-// function delayForSecond(callback) {
-//     setTimeout(function() {
-//         callback();
-//     }, 1000); 
-// }
-
-// delayForSecond(function () {
-//    console.log('Привет, Глеб!');
-// });
-
-
-
-// Задание 5
-// Посмотрите код. В нём допущена ошибка, и он выводит сообщения не в том порядке:
-
-// Функция delayForSecond через 1 секунду пишет в консоль 
-// «Прошла одна секунда», а затем вызывает переданный колбэк
-// function delayForSecond(cb) {
-//     setTimeout(() => {
-//         console.log('Прошла одна секунда');
-//         if(cb) {  cb(); }
-//     }, 1000)
-// }
-
-// // Функция sayHi выводит в консоль приветствие для указанного имени
-// function sayHi (name) {
-//     console.log(`Привет, ${name}!`);
-// }
-
-// // Код выше менять нельзя
-
-// // Нужно изменить код ниже:
-// delayForSecond(function() {
-//     sayHi('Глеб');
-// });
-
-// for (let i = 0; i < 3; i++) alert(i)
 
 
 
