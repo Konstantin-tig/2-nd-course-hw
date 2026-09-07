@@ -155,6 +155,7 @@ body, button {
     margin-top: 94px;
     width: 100%;
     box-sizing: border-box;
+    margin-bottom: 50px;
 }
 
 .games__grid {
@@ -163,6 +164,7 @@ body, button {
     gap: 32px;
     width: 100%;
     align-items: flex-start;
+    
 }
 
 .games__column {
@@ -348,7 +350,7 @@ body, button {
 .mini-games__title {
     font-weight: 700;
     font-size: 64px;
-    padding-top: 96px;
+    padding-top: 46px;
     padding-bottom: 72px;
     color: #FFFFFF;
 }
@@ -480,6 +482,7 @@ body, button {
         padding: 18px 0;
         overflow: hidden;
         white-space: nowrap;
+        
     }
 
     .ticker__star {
@@ -494,7 +497,6 @@ body, button {
         line-height: 110%;
         letter-spacing: 4%;
         text-transform: uppercase;
-
     }
 
     .games {
@@ -582,3 +584,21 @@ body, button {
     }
 
 }
+
+@keyframes ticker-move {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.ticker__track {
+  will-change: transform;
+  animation: ticker-move 60s linear infinite;
+}
+
+
+
+    
