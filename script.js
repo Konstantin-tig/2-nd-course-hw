@@ -306,14 +306,20 @@ colorBtn.addEventListener('click', function (event) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector('.ticker__track');
-  
-  if (track) {
-    // Дублируем содержимое внутренней ленты
-    const clone = track.innerHTML;
-    track.innerHTML = clone + clone;
-  }
+    const track = document.querySelector('.ticker__track');
+
+    if (track) {
+        // Дублируем содержимое внутренней ленты
+        const clone = track.innerHTML;
+        track.innerHTML = clone + clone;
+    }
 });
+
+
+
+
+
+
 
 
 
