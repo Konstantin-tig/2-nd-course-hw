@@ -23,4 +23,4 @@
 
 ### Ссылка на деплой проекта
 Посмотреть работающий сайт вживую можно по ссылке:  
-🔗 [https://github.io](https://github.io)
+🔗 https://konstantin-tig.github.io/mini_games/
